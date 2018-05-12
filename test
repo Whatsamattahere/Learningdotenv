@@ -1,6 +1,5 @@
 var url = require('url');
-require('dotenv').load(),
-  var webdriver = require('selenium-webdriver'),
+var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
 
