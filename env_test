@@ -1,0 +1,25 @@
+var url = require('url');
+require('dotenv').load(),
+  var webdriver = require('selenium-webdriver'),
+    By = webdriver.By,
+    until = webdriver.until;
+
+var firefox = require('selenium-webdriver/firefox');
+driver = new webdriver.Builder().forBrowser('firefox').build();
+
+describe('Clicking Logo in Header', function() {
+it("should return user to the home page", function() {
+  require('dotenv').config();
+  console.log(process.env = SANDBOX);
+  driver.findElement(By.xpath("//*[@id='login_user_username']")).sendKeys('email');
+  driver.findElement(By.xpath("//*[@id='login_user_password']")).sendKeys('password');
+  driver.findElement(By.xpath("//*[@name='commit']")).click();
+  driver.sleep(10);
+  driver.wait(until.elementLocated(By.css('#wm-shoutout-60413')), 5000);
+  driver.findElement(By.css('.wm-close-button')).click();
+  driver.sleep(10);
+  driver.findElement(By.css('.header__logo > a:nth-child(1) > h1:nth-child(1) > img:nth-child(1)')).click();
+  driver.sleep(20);
+  })
+});
+driver.quit()
